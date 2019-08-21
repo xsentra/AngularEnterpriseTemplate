@@ -37,6 +37,16 @@ export class LoginComponent implements OnInit, OnDestroy {
 
 	private returnUrl: any;
 
+	//test company
+	private  company1 = {
+		name: "Company Partner 1",
+		logoUrl: "../assets/media/logos/companyLogo.png"
+	};
+	private company2 = {
+		name: "Company Partner 2",
+		logoUrl: ""
+	};
+
 	// Read more: => https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
 
 	/**

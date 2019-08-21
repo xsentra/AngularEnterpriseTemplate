@@ -10,7 +10,11 @@
 	<!--begin::Signin-->
 	<div class="kt-login__form">
 		<div class="kt-login__title">
-			<h3>Sign In</h3>
+			<!-- if there is A company logo url show logo if not just show name -->
+			<img src="{{company1.logoUrl}}" alt="" *ngIf="company1.logoUrl; else showName">
+			<ng-template #showName>
+				<h3>{{company2.name}}</h3>
+			</ng-template>
 		</div>
 
 		<kt-auth-notice></kt-auth-notice>
@@ -55,7 +59,7 @@
 				<a href="javascript:;" routerLink="/auth/forgot-password" class="kt-link kt-login__link-forgot">
 					{{ 'AUTH.GENERAL.FORGOT_BUTTON' | translate }}
 				</a>
-				<button (click)="submit()" [ngClass]="{'kt-spinner kt-spinner--right kt-spinner--md kt-spinner--light': loading}" id="kt_login_signin_submit" class="btn btn-primary btn-elevate kt-login__btn-primary">{{ 'AUTH.LOGIN.BUTTON' | translate }}</button>
+				<button (click)="submit()" [ngClass]="{'kt-spinner kt-spinner--right kt-spinner--md kt-spinner--light': loading}" id="kt_login_signin_submit" class="btn btn-success btn-elevate kt-login__btn-primary">{{ 'AUTH.LOGIN.BUTTON' | translate }}</button>
 			</div>
 			<!--end::Action-->
 		</form>
@@ -73,9 +77,9 @@
 
 		<!--begin::Options-->
 		<div class="kt-login__options">
-			<a href="https://www.facebook.com/keenthemes/" target="_blank" class="btn btn-primary kt-btn">
-				<i class="fab fa-facebook-f"></i>
-				Facebook
+			<a href="https://www.microsoft.com/keenthemes/" target="_blank" class="btn btn-dark kt-btn">
+				<i class="fab fa-microsoft"></i>
+				Microsoft
 			</a>
 
 			<a href="https://twitter.com/keenthemes/" target="_blank" class="btn btn-info kt-btn">

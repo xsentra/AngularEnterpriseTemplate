@@ -39,7 +39,9 @@ export class LayoutConfigService {
 	getSavedConfig(): LayoutConfigModel {
 		const config = localStorage.getItem('layoutConfig');
 		try {
+			
 			return JSON.parse(config);
+
 		} catch (e) {
 		}
 	}
